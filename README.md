@@ -1,5 +1,9 @@
+# Foreword from Hyperspeed1313
+
 It bothered me that if I want to run this utility as a cron job every 5 minutes, I would be deleting my entry every 5 minutes. So I modified the code to first check if it even needs to do any updates before it goes and deletes the existing entry.
-This fork also adds a "quiet" config option that if set to "true", will cause nothing to print unless something goes wrong. Useful for those not wanting to fill up a log/mail file that's capturing the prints from their cron jobs. Not the best way to do it as that "quiet" setting gets sent with all your API requests, but it doesn't seem to be affecting whether Porkbun accepts my API requests to have the extra field tacked on there.
+
+This fork also adds a "quiet" config option that if set to "true", will cause nothing to print unless something goes wrong. Useful for those not wanting to fill up a log/mail file that's capturing the prints from their cron jobs. It's not the best way to do it as that "quiet" setting gets sent with all your API requests, but it doesn't seem to be affecting whether Porkbun accepts my API requests to have the extra field tacked on there.
+
 ---
 # README.MD from porkbundomains/porkbun-dynamic-dns-python:main
 ---
