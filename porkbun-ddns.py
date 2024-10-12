@@ -20,7 +20,7 @@ def getMyIP():
 
 def replaceInvalidRecords():
 	for i in getRecords(rootDomain)["records"]:
-		if i["name"]==fqdn and (i["type"] == 'A' or i["type"] == 'ALIAS' or i["type"] == 'CNAME'):
+		if i["name"]==fqdn and (i["type"] == 'A' or i["type"] == 'ALIAS' or i["type"] == 'CNAME') or i["type"] == "MX":
 			if myIP != i["content"]:
 				printIfAllowed("Deleting existing " + i["type"] + " Record")
 				printIfAllowed( "DELETE: " + (json.loads(requests.post(apiConfig["endpoint"] + '/dns/delete/' + rootDomain + '/' + i["id"], data = json.dumps(apiConfig)).text)["status"]) )
