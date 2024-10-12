@@ -38,6 +38,7 @@ if len(sys.argv)>2: #at least the config and root domain is specified
 	apiConfig = json.load(open(sys.argv[1])) #load the config file into a variable
 	rootDomain=sys.argv[2].lower()
 	canPrint=not apiConfig["quiet"].lower=="true"
+	del apiConfig["quiet"] # Remove quiet so it doesn't get send with the API requests
 		
 	if len(sys.argv)>3 and sys.argv[3]!='-i': #check if a subdomain was specified as the third argument
 		subDomain=sys.argv[3].lower()
